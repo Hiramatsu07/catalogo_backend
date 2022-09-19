@@ -1,0 +1,11 @@
+Borrar tareas
+---
+tags: 
+- "task"
+responses:
+  200:
+    description: Elimina la tarea seleccionada
+parameters: 
+  - name: id
+    in: path
+    description: La tarea se borró exitosamente
