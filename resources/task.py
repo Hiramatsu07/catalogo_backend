@@ -15,12 +15,12 @@ class Task(Resource):
     parser.add_argument('proveedor_id', type = int)
     parser.add_argument('categoria_id', type = int)
 
-    @swag_from('../swagger/task/get_task.yaml')
-    def get(self, id):
-        tarea = TaskModel.find_by_id(id)
+    @swag_from('../swagger/task/getProduct_task.yaml')
+    def getProduct(self):
+        tarea = TaskModel.find_by_id()
         if tarea:
             return tarea.json()
-        return {'message': 'Nein'}, 404
+        return {'message': 'Nein'}, 404        
 
     @swag_from('../swagger/task/put_task.yaml')
     def put(self, id):
@@ -41,8 +41,8 @@ class Task(Resource):
 
 
 class TaskList(Resource):
-    @swag_from('../swagger/task/list_task.yaml')
-    def get(self):
+    @swag_from('../swagger/task/getAll_task.yaml')
+    def getAll(self):
         query = TaskModel.query
         return paginated_results(query)
 
