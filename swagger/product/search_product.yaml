@@ -1,22 +1,23 @@
-Actualizar una tarea
+Buscar un producto
 ---
 tags: 
-- "task"
+- "producto"
 responses:
   200:
-    description: Se trajo correctamente el registro
+    description: Búsqueda realizada correctamente
   404:
-    description: No se encuentra la tarea
+    description: El producto no se encontró
 parameters: 
-  - name: id
-    in: path
-    required: false
+  - name: query
+    in: page
+    description: Productos actuales de la página
+    default: 1
   - name: body
     in: body
     schema:
-      $ref: "#/definitions/Taskput"
+      $ref: "#/definitions/Tasksearch"
 definitions:
-  Taskput:
+  TaskSearch:
     type: "object"
     properties:
       id: 

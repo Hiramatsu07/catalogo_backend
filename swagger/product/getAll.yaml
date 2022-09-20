@@ -1,7 +1,7 @@
 Lista de tarea
 ---
 tags: 
-- "Producto"
+- "producto"
 responses:
   200:
     description: Se obtiene una lista de tareas 

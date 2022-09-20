@@ -1,12 +1,12 @@
-Crear una tarea
+Añadir un producto nuevo
 ---
 tags: 
-- "task"
+- "producto"
 responses:
   200:
-    description: Se creo correctamente la tarea
+    description: El producto se agrego correctamente
   500:
-    description: Error en la creación de la tarea
+    description: Error al añadir el producto
 parameters: 
   - name: body
     in: body

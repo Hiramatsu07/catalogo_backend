@@ -1,5 +1,5 @@
 from tkinter import E
-from models.task import TaskModel
+from models.task import CatModel, TaskModel
 from flask_restful import Resource,reqparse
 from flasgger import swag_from
 from flask import request
@@ -15,14 +15,14 @@ class Task(Resource):
     parser.add_argument('proveedor_id', type = int)
     parser.add_argument('categoria_id', type = int)
 
-    @swag_from('../swagger/task/getProduct_task.yaml')
+    @swag_from('../swagger/product/getProduct.yaml')
     def getProduct(self):
         tarea = TaskModel.find_by_id()
         if tarea:
             return tarea.json()
         return {'message': 'Nein'}, 404        
 
-    @swag_from('../swagger/task/put_task.yaml')
+    @swag_from('../swagger/product/put_product.yaml')
     def put(self, id):
         tarea = TaskModel.find_by_id(id)
         if tarea:
@@ -31,22 +31,22 @@ class Task(Resource):
             tarea.save_to_db()
             return tarea.json()            
 
-    @swag_from('../swagger/task/delete_task.yaml')
+    @swag_from('../swagger/product/delete_product.yaml')
     def delete(self, id):
         tarea = TaskModel.find_by_id(id)
         if tarea:
             tarea.delete_from_db()
         
-        return {'message': 'La tarea se ha borrado exitosamente'}
+        return {'message': 'El producto se ha eliminido exitosamente'}
 
 
 class TaskList(Resource):
-    @swag_from('../swagger/task/getAll_task.yaml')
+    @swag_from('../swagger/product/getAll.yaml')
     def getAll(self):
         query = TaskModel.query
         return paginated_results(query)
 
-    @swag_from('../swagger/task/post_task.yaml')
+    @swag_from('../swagger/product/post_product.yaml')
     def post(self):
         data = Task.parser.parse_args()
 
@@ -56,12 +56,12 @@ class TaskList(Resource):
             tarea.save_to_db()
         except Exception as e:
             print(e)
-            return {'message': 'Ocurrió un error al crear la tarea'}
+            return {'message': 'Ocurrió un error al agregar el producto'}
 
         return tarea.json(), 201
 
 class TaskSearch(Resource):
-    @swag_from('../swagger/task/search_task.yaml')
+    @swag_from('../swagger/product/search_product.yaml')
     def post(self):
         query = TaskModel.query
         if request.json:
@@ -71,3 +71,7 @@ class TaskSearch(Resource):
             query = restrict(query,filtros,'status',lambda x: TaskModel.status.contains(x))
             #logica de filtrado de datos 
         return paginated_results(query)
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 4fcc4abd90c39bf7d70ba8471532b5ad9454dc13
