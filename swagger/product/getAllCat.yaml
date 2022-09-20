@@ -4,9 +4,9 @@ tags:
 - "Categoria"
 responses:
   200:
-    description: Se obtiene una lista de Categorias 
+    description: Se obtiene la lista de categorias 
 parameters: 
   - name: page
     in: query
     default: 1
-    description: Todas las categorias
+    description: Obtiene todas las categorias

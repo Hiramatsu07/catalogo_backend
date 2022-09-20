@@ -18,7 +18,7 @@ PREFIX = os.environ.get('PREFIX_PATH', '/api')
  
 # Swagger config
 app.config['SWAGGER'] = {
-   'title': 'todo-backend',
+   'title': 'catalogue-backend',
    'version': '1.0.0',
    'description': 'API de servicios REST en Flask',
    'uiversion': 2,
@@ -39,7 +39,7 @@ def env_config(name, default):
    app.config[name] = os.environ.get(name, default=default)
 
 #Database config
-env_config('SQLALCHEMY_DATABASE_URI','postgresql://postgres:12345678@localhost:5432/todo')
+env_config('SQLALCHEMY_DATABASE_URI','postgresql://postgres:12345678@localhost:5432/catalogo')
 
 #SQLAlchemy config
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
