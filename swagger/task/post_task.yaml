@@ -1,0 +1,26 @@
+tags: 
+- "task"
+responses:
+  200:
+    description: Se agrego el producto al sistema
+  500:
+    description: Error en la suma del producto
+parameters: 
+  - name: body
+    in: body
+    schema:
+      $ref: "#/definitions/Taskpost"
+definitions:
+  Taskput:
+    type: "object"
+    properties:
+      id: 
+        type: "int64"
+      descrip:
+        type: "string"
+      status:
+        type: "string"
+    example:
+        id: 17
+        descrip: "bla bla"
+        status: "bla bla"

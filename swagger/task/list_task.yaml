@@ -1,0 +1,12 @@
+Lista de tarea
+---
+tags: 
+- "task"
+responses:
+  200:
+    description: Se obtiene una lista de productos
+parameters: 
+  - name: page
+    in: query
+    default: 1
+    description: Productos actuales de la página

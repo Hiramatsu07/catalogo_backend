@@ -1,0 +1,13 @@
+Obtener un producto
+---
+tags: 
+- "task"
+responses:
+  200:
+    description: Se trajo correctamente el registro
+  401:
+    description: Las credenciales proveídas en los datos no son correctas 
+parameters: 
+  - name: id
+    in: path
+    required: false

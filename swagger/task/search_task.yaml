@@ -1,0 +1,30 @@
+tags: 
+- "search"
+responses:
+  200:
+    description: Busqueda realizada correctamente
+  404:
+    description: La tarea seleccionada no existe
+parameters: 
+  - name: id
+    in: page
+    description: Tareas actuales de la pagina
+    default: 1
+  - name: body
+    in: body
+    schema:
+      $ref: "#/definitions/TaskSearch"
+definitions:
+  TaskSearch:
+    type: "object"
+    properties:
+      id: 
+        type: "int64"
+      descrip:
+        type: "string"
+      status:
+        type: "string"
+    example:
+        id: 17
+        descrip: "bla bla"
+        status: "bla bla"

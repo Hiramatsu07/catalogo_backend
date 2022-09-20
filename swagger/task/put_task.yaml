@@ -1,0 +1,30 @@
+
+tags: 
+- "task"
+responses:
+  200:
+    description: Se trajo correctamente el producto
+  404:
+    description: No se encuentra el producto
+parameters: 
+  - name: id
+    in: path
+    required: false
+  - name: body
+    in: body
+    schema:
+      $ref: "#/definitions/Taskput"
+definitions:
+  Taskput:
+    type: "object"
+    properties:
+      id: 
+        type: "int64"
+      descrip:
+        type: "string"
+      status:
+        type: "string"
+    example:
+        id: 17
+        descrip: "bla bla"
+        status: "bla bla"
