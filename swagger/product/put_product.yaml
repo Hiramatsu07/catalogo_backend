@@ -14,18 +14,29 @@ parameters:
   - name: body
     in: body
     schema:
-      $ref: "#/definitions/Taskput"
+      $ref: "#/definitions/productPut"
 definitions:
-  Taskput:
+  productPut:
     type: "object"
     properties:
       id: 
         type: "int64"
-      descrip:
+      descripcion:
         type: "string"
-      status:
+      nombre:
         type: "string"
+      precio:
+        type: "string"
+      estado:
+        type: "string"
+      proveedor_id:
+        type: "int"
+      categoria_id:
+        type: "int"
     example:
-        id: 17
-        descrip: "bla bla"
-        status: "bla bla"
+      descripcion: "bla bla"
+      estado: "bla bla"
+      precio: "22000"
+      estado: "bla bla"
+      proveedor_id: 1
+      categoria_id: 1

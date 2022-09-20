@@ -15,7 +15,7 @@ class Task(Resource):
     parser.add_argument('proveedor_id', type = int)
     parser.add_argument('categoria_id', type = int)
 
-    @swag_from('../swagger/product/getProduct.yaml')
+    @swag_from('../swagger/product/get_product.yaml')
     def getProduct(self):
         tarea = TaskModel.find_by_id()
         if tarea:

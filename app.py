@@ -52,9 +52,9 @@ app.config['SQLALCHEMY_ECHO'] = False
 def welcome():
    return redirect(f"{PREFIX}/apidocs", code=302)
  
-api.add_resource(Task, f'{PREFIX}/tasks/<id>')
-api.add_resource(TaskList, f'{PREFIX}/tasks')
-api.add_resource(TaskSearch, f'{PREFIX}/search/tasks')
+api.add_resource(Task, f'{PREFIX}/products<id>')
+api.add_resource(TaskList, f'{PREFIX}/products')
+api.add_resource(TaskSearch, f'{PREFIX}/search/')
 
 
 # Bloque opcional para ejecutar con python app.py

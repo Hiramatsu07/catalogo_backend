@@ -15,18 +15,15 @@ parameters:
   - name: body
     in: body
     schema:
-      $ref: "#/definitions/Tasksearch"
+      $ref: "#/definitions/productSearch"
 definitions:
-  TaskSearch:
+  productSearch:
     type: "object"
     properties:
       id: 
         type: "int64"
-      descrip:
-        type: "string"
-      status:
+      nombre:
         type: "string"
     example:
         id: 17
-        descrip: "bla bla"
-        status: "bla bla"
+        nombre: "leche"

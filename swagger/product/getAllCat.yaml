@@ -1,7 +1,7 @@
 Lista de categorias
 ---
 tags: 
-- "Categoria"
+- "categoria"
 responses:
   200:
     description: Se obtiene la lista de categorias 
