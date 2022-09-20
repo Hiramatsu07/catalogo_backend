@@ -71,4 +71,7 @@ class TaskSearch(Resource):
             query = restrict(query,filtros,'status',lambda x: TaskModel.status.contains(x))
             #logica de filtrado de datos 
         return paginated_results(query)
+<<<<<<< HEAD
+=======
     
+>>>>>>> 4fcc4abd90c39bf7d70ba8471532b5ad9454dc13
