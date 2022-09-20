@@ -1,11 +1,12 @@
-
+Actualizar una tarea
+---
 tags: 
 - "task"
 responses:
   200:
-    description: Se trajo correctamente el producto
+    description: Se trajo correctamente el registro
   404:
-    description: No se encuentra el producto
+    description: No se encuentra la tarea
 parameters: 
   - name: id
     in: path

@@ -1,19 +1,21 @@
+Buscar una tarea
+---
 tags: 
 - "search"
 responses:
   200:
-    description: Busqueda realizada correctamente
+    description: Búsqueda realizada correctamente
   404:
     description: La tarea seleccionada no existe
 parameters: 
-  - name: id
+  - name: query
     in: page
-    description: Tareas actuales de la pagina
+    description: Tareas actuales de la página
     default: 1
   - name: body
     in: body
     schema:
-      $ref: "#/definitions/TaskSearch"
+      $ref: "#/definitions/Tasksearch"
 definitions:
   TaskSearch:
     type: "object"

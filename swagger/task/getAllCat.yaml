@@ -1,0 +1,12 @@
+Lista de categorias
+---
+tags: 
+- "Categoria"
+responses:
+  200:
+    description: Se obtiene una lista de Categorias 
+parameters: 
+  - name: page
+    in: query
+    default: 1
+    description: Todas las categorias

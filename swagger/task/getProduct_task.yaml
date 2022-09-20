@@ -1,7 +1,7 @@
-Obtener una tarea 
+Obtener un producto
 ---
 tags: 
-- "task"
+- "Producto"
 responses:
   200:
     description: Se trajo correctamente el registro

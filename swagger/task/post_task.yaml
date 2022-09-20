@@ -1,17 +1,19 @@
+Crear una tarea
+---
 tags: 
 - "task"
 responses:
   200:
-    description: Se agrego el producto al sistema
+    description: Se creo correctamente la tarea
   500:
-    description: Error en la suma del producto
+    description: Error en la creación de la tarea
 parameters: 
   - name: body
     in: body
     schema:
       $ref: "#/definitions/Taskpost"
 definitions:
-  Taskput:
+  Taskpost:
     type: "object"
     properties:
       id: 
