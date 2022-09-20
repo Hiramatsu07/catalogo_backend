@@ -9,8 +9,11 @@ from utils import paginated_results, _assign_if_something, restrict
 class Task(Resource):
     parser = reqparse.RequestParser()
     parser.add_argument('id', type = int)
-    parser.add_argument('descrip', type = str)
-    parser.add_argument('status', type = str)
+    parser.add_argument('descripcion', type = str)
+    parser.add_argument('estado', type = str)
+    parser.add_argument('nombre', type = str)
+    parser.add_argument('proveedor_id', type = int)
+    parser.add_argument('categoria_id', type = int)
 
     @swag_from('../swagger/task/get_task.yaml')
     def get(self, id):
