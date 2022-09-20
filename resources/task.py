@@ -43,11 +43,6 @@ class TaskList(Resource):
         query = TaskModel.query
         return paginated_results(query)
 
-    @swag_from('../swagger/task/getAllCat_task.yaml')
-    def getAll(self):
-        query = TaskModel.query
-        return paginated_results(query)
-
     @swag_from('../swagger/task/post_task.yaml')
     def post(self):
         data = Task.parser.parse_args()
