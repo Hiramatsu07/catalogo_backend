@@ -1,6 +1,6 @@
 from flask import Flask, redirect
 
-from resources.task import Task, TaskList, TaskSearch
+from resources.product import Product, ProductList, ProductSearch
 from flask_restful import Api
 from flasgger import Swagger
 
@@ -52,9 +52,9 @@ app.config['SQLALCHEMY_ECHO'] = False
 def welcome():
    return redirect(f"{PREFIX}/apidocs", code=302)
  
-api.add_resource(Task, f'{PREFIX}/products<id>')
-api.add_resource(TaskList, f'{PREFIX}/products')
-api.add_resource(TaskSearch, f'{PREFIX}/search/')
+api.add_resource(Product, f'{PREFIX}/products<id>')
+api.add_resource(ProductList, f'{PREFIX}/products')
+api.add_resource(ProductSearch, f'{PREFIX}/search/')
 
 
 # Bloque opcional para ejecutar con python app.py

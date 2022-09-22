@@ -2,7 +2,7 @@ from db import db
 from flask_restful.reqparse import Namespace
 from utils import _assign_if_something
 
-class TaskModel(db.Model):
+class ProductModel(db.Model):
     __tablename__ = 'producto'
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String)
@@ -59,10 +59,11 @@ class CatModel(db.Model):
         self.id = id
         self.descripcion = descripcion
 
+
     def json(self, depth =0):
         json = {
             'id': self.id,
-            'descripcion': self.descripcion,
+            'descripcion': self.descripcion
         }
 
         return json

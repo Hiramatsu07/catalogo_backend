@@ -38,5 +38,6 @@ definitions:
       estado: "bla bla"
       precio: "22000"
       estado: "bla bla"
-      proveedor_id: 1
       categoria_id: 1
+      proveedor_id: 1
+      
