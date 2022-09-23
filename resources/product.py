@@ -75,3 +75,8 @@ class ProductSearch(Resource):
             #logica de filtrado de datos 
         return paginated_results(query)
 
+class CatList(Resource):
+    @swag_from('../swagger/product/getAllCat.yaml')
+    def getAll(self):
+        query = CatModel.query
+        return paginated_results(query)
