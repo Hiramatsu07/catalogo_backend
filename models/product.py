@@ -84,7 +84,7 @@ class CatModel(db.Model):
         for no_pk_key in ['description']:
             _assign_if_something(self, newdata, no_pk_key)
 
-class ProvModel(db.Model):
+class ProdModel(db.Model):
     __tablename__ = 'proveedor'
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String)
