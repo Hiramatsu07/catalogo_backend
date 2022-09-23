@@ -3,6 +3,8 @@ from flask import Flask, redirect
 from resources.product import Product, ProductList, ProductSearch
 from flask_restful import Api
 from flasgger import Swagger
+from flask_cors import CORS
+from resources.category import CatList
 
 from db import db
 
@@ -39,7 +41,7 @@ def env_config(name, default):
    app.config[name] = os.environ.get(name, default=default)
 
 #Database config
-env_config('SQLALCHEMY_DATABASE_URI','postgresql://postgres:12345@localhost:5432/catalogo')
+env_config('SQLALCHEMY_DATABASE_URI','postgresql://postgres:12345678@localhost:5432/catalogo')
 
 #SQLAlchemy config
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -55,7 +57,9 @@ def welcome():
 api.add_resource(Product, f'{PREFIX}/products<id>')
 api.add_resource(ProductList, f'{PREFIX}/products')
 api.add_resource(ProductSearch, f'{PREFIX}/search/')
+api.add_resource(CatList, f'{PREFIX}/categories/')
 
+CORS(app,resources={r'/*':{'origins': '*'}})
 
 # Bloque opcional para ejecutar con python app.py
 if __name__ == '__main__':

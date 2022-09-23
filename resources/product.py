@@ -1,6 +1,6 @@
 from itertools import product
 from tkinter import E
-from models.product import CatModel, ProductModel
+from models.product import ProductModel
 from flask_restful import Resource,reqparse
 from flasgger import swag_from
 from flask import request
@@ -75,8 +75,3 @@ class ProductSearch(Resource):
             #logica de filtrado de datos 
         return paginated_results(query)
 
-class CatList(Resource):
-    @swag_from('../swagger/product/getAllCat.yaml')
-    def getAll(self):
-        query = CatModel.query
-        return paginated_results(query)
