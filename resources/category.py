@@ -1,6 +1,6 @@
 from itertools import product
 from tkinter import E
-from models.product import CatModel
+from models.category import CatModel
 from flask_restful import Resource,reqparse
 from flasgger import swag_from
 from flask import request
