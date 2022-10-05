@@ -54,9 +54,9 @@ app.config['SQLALCHEMY_ECHO'] = False
 def welcome():
    return redirect(f"{PREFIX}/apidocs", code=302)
  
-api.add_resource(Product, f'{PREFIX}/products<id>')
+api.add_resource(Product, f'{PREFIX}/products/<id>')
 api.add_resource(ProductList, f'{PREFIX}/products')
-api.add_resource(ProductSearch, f'{PREFIX}/search/')
+api.add_resource(ProductSearch, f'{PREFIX}/search/products')
 api.add_resource(CatList, f'{PREFIX}/categories/')
 
 CORS(app,resources={r'/*':{'origins': '*'}})

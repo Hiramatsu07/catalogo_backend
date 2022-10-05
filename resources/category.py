@@ -8,7 +8,7 @@ from flask import request
 from utils import paginated_results, _assign_if_something, restrict
 
 class CatList(Resource):
-    @swag_from('../swagger/product/category/getAllCat.yaml') 
+    @swag_from('../swagger/product/getCat.yaml')
     def get(self):
         query = CatModel.query
         return paginated_results(query)
